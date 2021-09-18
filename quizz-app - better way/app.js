@@ -16,6 +16,7 @@ form.addEventListener('submit', e => {
 
   });
   
+  scrollTo(0, 0);
   resultBox.querySelector("span").textContent= `${score}%`;
   resultBox.classList.remove("d-none");
 

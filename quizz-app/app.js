@@ -14,8 +14,11 @@ form.addEventListener('submit', e => {
     if (answer === correctAnswers[index]){
       score += 25;
     }
+
+    
     resultBox.classList.remove("d-none");
     resultSpan.innerHTML=` ${score}% `;
+    scrollTo(0, 0);
 
   });
 
