@@ -33,18 +33,18 @@ list.addEventListener("click", e => {
 
 const filterToDos = (term) =>{
   Array.from(list.children)
-    .filter((todo) =>  !todo.textContent.includes(term))
+    .filter((todo) =>  !todo.textContent.toLowerCase().includes(term))
     .forEach((todo) => todo.classList.add("filtered"));
 
     //if a letter is removed for the term and now a li matches we want to remove class
     Array.from(list.children)
-    .filter((todo) =>  todo.textContent.includes(term))
+    .filter((todo) =>  todo.textContent.toLowerCase().includes(term))
     .forEach((todo) => todo.classList.remove("filtered"));
 };
 
 //keyup event
 search.addEventListener("keyup", () => {
-  const term = search.value.trim();
+  const term = search.value.trim().toLowerCase();
 
   filterToDos(term)
 });
